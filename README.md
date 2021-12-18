@@ -6,7 +6,7 @@ Contains the queries behind the Ricochet Dune Analytics Dashboard at https://dun
 
 ## 2. Profitability Analysis
 
-Python scripts which assess the profitability of Ricochet's stream markets. This involves comparing the cost of running keepers (gas) against the fees accrued by these markets.
+Python scripts which assess the profitability of Ricochet's stream markets. This involves comparing the cost of running keepers (gas) against the fees earned by these markets.
 
 ## 3. $RIC Supply and Price Endpoint
 
