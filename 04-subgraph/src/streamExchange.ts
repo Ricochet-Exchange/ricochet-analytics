@@ -22,14 +22,17 @@ export function handleUpdatedStream(event: UpdatedStream): void {
 
 export function handleDistribution(event: Distribution): void {
   const market = updateMarket(event.address)
-  const keeper = updateKeeper(event.transaction.from)
   const distribution = new DistributionEvent(`${event.transaction.hash.toHex()}-${event.logIndex.toString()}`)
+  // Only set keeper if event originates from external distribute() function call
+  if (event.transaction.input.toHex().startsWith("0xe4fc6b6d")) {
+    const keeper = updateKeeper(event.transaction.from)
+    distribution.keeper = keeper
+  }
   distribution.blockNumber = event.block.number
   distribution.timestamp = event.block.timestamp
   distribution.transactionHash = event.transaction.hash
   distribution.from = event.transaction.from
   distribution.market = market
-  distribution.keeper = keeper
   distribution.distributedAmount = event.params.totalAmount
   distribution.collectedFeeAmount = event.params.feeCollected
   distribution.token = event.params.token

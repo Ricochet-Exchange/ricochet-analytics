@@ -18,7 +18,7 @@ type DistributionEvent @entity {
   from: Bytes!
 
   market: Market!
-  keeper: Keeper!
+  keeper: Keeper
   distributedAmount: BigInt!
   collectedFeeAmount: BigInt!
   token: Bytes!

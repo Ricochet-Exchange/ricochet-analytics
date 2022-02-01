@@ -5,10 +5,10 @@
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy Ricochet-Exchange/matic --node https://api.thegraph.com/deploy/",
-    "create-local": "graph create Ricochet-Exchange/matic --node http://localhost:8020/",
-    "remove-local": "graph remove Ricochet-Exchange/matic --node http://localhost:8020/",
-    "deploy-local": "graph deploy Ricochet-Exchange/matic --node http://localhost:8020/ --ipfs http://localhost:5001"
+    "deploy": "graph deploy ricochet-exchange/matic --node https://api.thegraph.com/deploy/",
+    "create-local": "graph create ricochet-exchange/matic --node http://localhost:8020/",
+    "remove-local": "graph remove ricochet-exchange/matic --node http://localhost:8020/",
+    "deploy-local": "graph deploy ricochet-exchange/matic --node http://localhost:8020/ --ipfs http://localhost:5001"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.26.0",

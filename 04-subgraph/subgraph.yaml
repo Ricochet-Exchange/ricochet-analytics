@@ -30,4 +30,3 @@ dataSources:
         - event: Distribution(uint256,uint256,address)
           handler: handleDistribution
       file: ./src/streamExchange.ts
-    

@@ -11,3 +11,7 @@ Python scripts which assess the profitability of Ricochet's stream markets. This
 ## 3. $RIC Supply and Price Endpoint
 
 A deployed HTTPS endpoint with RIC token supply and price data. This endpoint would be utilized by token data viewing services such as CoinGecko to display.
+
+## 4. Ricochet subgraph
+
+Contains the [Ricochet Exchange subgraph](https://thegraph.com/hosted-service/subgraph/ricochet-exchange/matic) source code
