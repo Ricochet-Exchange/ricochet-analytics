@@ -1,0 +1,17 @@
+{
+  "name": "ricochet-exchange-subgraph",
+  "description": "Subgraph for the Ricochet Exchange smart contracts",
+  "private": true,
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy ricochet-exchange/ricochet-exchange --node https://api.thegraph.com/deploy/",
+    "create-local": "graph create ricochet-exchange/ricochet-exchange --node http://localhost:8020/",
+    "remove-local": "graph remove ricochet-exchange/ricochet-exchange --node http://localhost:8020/",
+    "deploy-local": "graph deploy ricochet-exchange/ricochet-exchange --node http://localhost:8020/ --ipfs http://localhost:5001"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.26.0",
+    "@graphprotocol/graph-ts": "0.24.1"
+  }
+}

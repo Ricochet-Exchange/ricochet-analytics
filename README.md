@@ -23,4 +23,4 @@ A deployed HTTPS endpoint with RIC token supply and price data. This endpoint wo
 
 ## 5. Ricochet subgraph
 
-Contains the [Ricochet Exchange subgraph](https://thegraph.com/hosted-service/subgraph/ricochet-exchange/matic) source code
+Contains the [Ricochet Exchange subgraph](https://thegraph.com/hosted-service/subgraph/ricochet-exchange/ricochet-exchange) source code

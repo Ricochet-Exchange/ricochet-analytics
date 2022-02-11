@@ -12,7 +12,7 @@ Official subgraph for the Ricochet Exchange smart contracts
 
 3. Run `yarn create-local && yarn deploy-local` to build and deploy the subgraph locally
 
-4. Visit `http://localhost:8000/subgraphs/name/ricochet-exchange/matic/graphql` to query the subgraph using GraphQL
+4. Visit `http://localhost:8000/subgraphs/name/ricochet-exchange/ricochet-exchange/graphql` to query the subgraph using GraphQL
 
 5. Stop the `docker-compose` service when done
 
