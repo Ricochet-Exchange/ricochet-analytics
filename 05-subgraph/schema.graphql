@@ -1,0 +1,59 @@
+type UpdatedStreamEvent @entity {
+  id: ID!
+  blockNumber: BigInt!
+  timestamp: BigInt!
+  transactionHash: Bytes!
+  from: Bytes!
+
+  stream: Stream!
+  newFlowRate: BigInt!
+  newTotalFlowRate: BigInt!
+}
+
+type DistributionEvent @entity {
+  id: ID!
+  blockNumber: BigInt!
+  timestamp: BigInt!
+  transactionHash: Bytes!
+  from: Bytes!
+
+  market: Market!
+  keeper: Keeper
+  distributedAmount: BigInt!
+  collectedFeeAmount: BigInt!
+  token: Bytes!
+}
+
+type Stream @entity {
+  id: ID!
+  streamer: Streamer!
+  market: Market!
+  updatedAt: BigInt!
+  updatedStreamEvents: [UpdatedStreamEvent!]! @derivedFrom(field: "stream")
+  flowRate: BigInt!
+  # totalStreamed = amount streamed until updatedAt timestamp
+  # Formula to get current streamed amount is:
+  # totalStreamed + (currentTime - updatedAt) * flowRate
+  totalStreamed: BigInt!
+}
+
+type Market @entity {
+  id: ID!
+  inToken: Bytes!
+  outToken: Bytes!
+  streams: [Stream!]! @derivedFrom(field: "market")
+  distributionEvents: [DistributionEvent!]! @derivedFrom(field: "market")
+}
+
+type Streamer @entity {
+  id: ID!
+  streams: [Stream!]! @derivedFrom(field: "streamer")
+}
+
+type Keeper @entity {
+  id: ID!
+  distributionEvents: [DistributionEvent!]! @derivedFrom(field: "keeper")
+  totalDistributions: Int!
+}
+
+

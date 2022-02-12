@@ -1,0 +1,32 @@
+specVersion: 0.0.4
+description: Subgraph for the Ricochet Exchange smart contracts
+repository: https://github.com/Ricochet-Exchange/ricochet-analytics
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: StreamExchange
+    network: matic
+    source:
+      abi: StreamExchange
+      startBlock: 17476399
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - UpdatedStreamEvent
+        - DistributionEvent
+        - Stream
+        - Streamer
+        - Market
+        - Keeper
+      abis:
+        - name: StreamExchange
+          file: ./abis/StreamExchange.json
+      eventHandlers:
+        - event: UpdatedStream(address,int96,int96)
+          handler: handleUpdatedStream
+        - event: Distribution(uint256,uint256,address)
+          handler: handleDistribution
+      file: ./src/streamExchange.ts

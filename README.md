@@ -20,3 +20,7 @@ A deployed HTTPS endpoint with RIC token supply and price data. This endpoint wo
 * Brownie framework for structure of scripts and contracts/interfaces utilized
 
 * Alchemy websocket utilized within the brownie networks setup under id polygon-main-ws
+
+## 5. Ricochet subgraph
+
+Contains the [Ricochet Exchange subgraph](https://thegraph.com/hosted-service/subgraph/ricochet-exchange/ricochet-exchange) source code
