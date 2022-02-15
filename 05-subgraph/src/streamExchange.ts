@@ -48,10 +48,8 @@ function updateStream(event: UpdatedStream): string {
     stream.updatedAt = event.block.timestamp
     stream.streamer = streamer
   }
-  // If stream was closed, skip totalStreamed calculation
-  const previousFlowRate = event.params.newRate.equals(BigInt.zero()) ? BigInt.zero() : stream.flowRate
   const timeSinceLastUpdate = event.block.timestamp.minus(stream.updatedAt)
-  stream.totalStreamed = stream.totalStreamed.plus(timeSinceLastUpdate.times(previousFlowRate))
+  stream.totalStreamed = stream.totalStreamed.plus(timeSinceLastUpdate.times(stream.flowRate))
   stream.flowRate = event.params.newRate
   stream.updatedAt = event.block.timestamp
   stream.save()
