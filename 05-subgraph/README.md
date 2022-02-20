@@ -10,11 +10,13 @@ Official subgraph for the Ricochet Exchange smart contracts
 
 2. Start graph-node locally in docker by running `RPC_URL={rpc_endpoint} docker-compose up`, where `{rpc_endpoint}` is a Matic RPC endpoint, e.g from [Alchemy](https://alchemy.com)
 
-3. Run `yarn create-local && yarn deploy-local` to build and deploy the subgraph locally
+3. Bind contracts to specific addresses in the mappings by running  `graph codegen`
 
-4. Visit `http://localhost:8000/subgraphs/name/ricochet-exchange/ricochet-exchange/graphql` to query the subgraph using GraphQL
+4. Run `yarn create-local && yarn deploy-local` to build and deploy the subgraph locally
 
-5. Stop the `docker-compose` service when done
+5. Visit `http://localhost:8000/subgraphs/name/ricochet-exchange/ricochet-exchange/graphql` to query the subgraph using GraphQL
+
+6. Stop the `docker-compose` service when done
 
 ### Deploying the subgraph
 
